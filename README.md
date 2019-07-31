@@ -18,7 +18,7 @@ snd-bcm2835
 ```
 sudo reboot
 ```
-4. snd_bcm2835などのモジュールがロードされていることを確認。
+4. snd\_bcm2835などのモジュールがロードされていることを確認。
 ```
 lsmod | grep snd # snd_bcm2835 などが表示されるはず。
 ```
@@ -64,10 +64,21 @@ sudo modprobe my_loader
 ```
 sudo reboot
 ```
+14. SPH0645LM4HとRasberry Piを配線でつなぐ。ピン接続は以下のようにする。
+
+| SPH0645LM4H |   Rasberry Pi   |
+| ----------- | --------------- |
+|     3V      |   pin1 (3.3V)   |
+|     GND     |   pin6 (GND)    |
+|    BCLK     | pin12 (PCM\_CLK)|
+|    DOUT     | pin38 (PCM\_DIN)|
+|    LRCL     |  pin35 (PCM\_FS)|
+|     SEL     |  Not connected  |
+
 
 テスト
 ======
-・マイクデバイスの一覧を表示し、「snd_rpi_simple_card」があることを確認。
+・マイクデバイスの一覧を表示し、「snd\_rpi\_simple\_card」があることを確認。
 ```
 arecord -l
 ```
